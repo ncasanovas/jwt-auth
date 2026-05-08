@@ -18,7 +18,7 @@ CORS - Manejo de solicitudes entre orígenes.
 
 📂 Estructura del Proyecto
 
-Plaintext
+```plaintext
 jwt-auth/
 ├── src/
 │   ├── configs/      # Configuración de DB y variables
@@ -30,25 +30,28 @@ jwt-auth/
 │   └── server.js     # Punto de entrada y levantamiento del server
 ├── .env              # Variables sensibles 
 └── package.json      # Dependencias y scripts
+```
 
 
 ⚙️ Instalación y Configuración
 
-1.Clonar el repositorio:
+1. Clonar el repositorio:
 
-Bash
+```bash
 git clone https://github.com/tu-usuario/jwt-auth.git
 cd jwt-auth
+```
 
-2.Instalar dependencias:
+2. Instalar dependencias:
 
-Bash
+```bash
 npm install
+```
 
-3.Configurar variables de entorno:
-Crea un archivo .env en la raíz del proyecto y añade lo siguiente:
+3. Configurar variables de entorno:
+Crea un archivo `.env` en la raíz del proyecto y añade lo siguiente:
 
-Fragmento de código
+```env
 PORT=5000
 DB_USER=root
 DB_PASSWORD=tu_contraseña
@@ -56,27 +59,31 @@ DB_NAME=jwt_auth
 DB_HOST=127.0.0.1
 NODE_ENV=development
 JWT_SECRET=tu_clave_secreta_generada
+```
 
-4.Preparar la Base de Datos:
+4. Preparar la Base de Datos:
 Crea la base de datos manualmente en MySQL:
 
-SQL
+```sql
 CREATE DATABASE jwt_auth;
+```
 
 Luego, Sequelize sincronizará automáticamente las tablas al iniciar la aplicación.
 
 🚀 Ejecución
 
-Bash
+```bash
 npm start
+```
 
 📋 Endpoints de la API
 
-Método,Endpoint,Descripción
-POST,/api/users/register,Crea un nuevo usuario y encripta la contraseña.
-POST,/api/users/login,Autentica al usuario y devuelve un JWT.
-GET,/api/users/user-list,Obtiene la lista de todos los usuarios registrados.
-GET,/,Comprobación de estado de la API.
+| Método | Endpoint | Descripción |
+|--------|----------|-------------|
+| POST | /api/users/register | Crea un nuevo usuario y encripta la contraseña |
+| POST | /api/users/login | Autentica al usuario y devuelve un JWT |
+| GET | /api/users/user-list | Obtiene la lista de todos los usuarios registrados |
+| GET | / | Comprobación de estado de la API |
 
 🔒 Seguridad
 Las contraseñas se procesan con un Salt de 10 rondas antes de ser hasheadas.
